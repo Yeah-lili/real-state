@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +9,22 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                rinterio_primary_lime: 'rgba(171, 239, 95, 1)',
-                rinterio_secondary_lime: 'rgba(171, 239, 95, 0.5)'
-
-              }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              lime: 'rgb(171, 239, 95)',
+              light_lime: 'rgba(171, 239, 95, 0.5)',
+              para_deep: 'rgb(73, 73, 73)',
+              para_light: 'rgb(115, 115, 115)'
+            },
+            fontFamily: {
+              manrope: 'manrope'
             }
           }
         }
-      </script>
+      }
+    </script>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,62 +41,444 @@
     </style>
 
 </head>
-<body class="font-manrope">
 
-  <header>
+
+
+<!-- body -->
+<body class="font-manrope border border-red-500 ">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-gray-200 to-white pb-8 sm:pb-14">
+    <!-- Navbar -->
     <nav>
-      <div class="navbar bg-base-100 justify-around">
-        <div class="">
-          <a class="btn btn-ghost text-xl">Rinterio</a>
+      <div class="navbar w-11/12 mx-auto py-8  sm:py-10  ">
+        <!-- Navbar start -->
+        <div class="navbar-start flex gap-2">
+          <i
+            class="text-black text-xl bg-lime h-8 w-8 flex justify-center items-center rounded-full fa-solid fa-arrow-right -rotate-45"></i>
+          <a class="font-bold text-3xl text-black">Rinterio</a>
         </div>
+        <!-- Navbar Center -->
         <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-              <li><a>Home</a></li>
-              <li><a>Services</a></li>
-              <li><a>Portfolio</a></li>
-              <li><a>Blogs</a></li>
-              <li><a>Contact Us</a></li>
+          <ul class="menu menu-horizontal px-1  text-lg text-[#737373]">
+            <li><a><span class="text-black font-bold">Home</span></a></li>
+            <li><a>Service</a></li>
+            <li><a>Portfolio</a></li>
+            <li><a>Blogs</a></li>
+            <li><a>Contact Us</a></li>
           </ul>
         </div>
-        <div class="">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16" />
-              </svg>
+        <!-- Navbar end -->
+        <div class="navbar-end">
+
+      
+        <!-- search,button,cart:  hidden for phone  -->
+          <div class="hidden sm:flex items-center justify-between gap-5">
+            <i
+              class="bg-white border border-gray-300 h-10 w-10 flex justify-center items-center text-lg rounded-full fa-solid fa-magnifying-glass"></i>
+            <i
+              class="bg-white border border-gray-300  h-10 w-10 flex justify-center items-center  text-lg rounded-full fa-solid fa-cart-shopping"></i>
+            <div>
+              <button
+                class="btn bg-lime rounded-3xl md:text-lg flex justify-center items-center max-h-10 text-black"><span>BooK
+                  Consult</span>
+                <i
+                  class="text-white bg-black h-6 w-6 flex justify-center items-center rounded-full fa-solid fa-arrow-right -rotate-45"></i>
+              </button>
+
             </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          </div>
+
+          <!-- dropdown -->
+          <div class="dropdown  sm:hidden">
+            <div tabindex="0" role="button"
+              class=" h-12 w-12 bg-white flex justify-center items-center rounded-full border border-gray-300  lg:hidden">
+              <i class="text-xl fa-solid fa-bars"></i>
+            </div>
+            <ul tabindex="0"
+              class="menu right-0 menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-lg text-[#737373]">
               <li><a>Home</a></li>
-              <li><a>Services</a></li>
+              <li><a>Service</a></li>
               <li><a>Portfolio</a></li>
               <li><a>Blogs</a></li>
               <li><a>Contact Us</a></li>
+
             </ul>
           </div>
-          <a class="btn bg-rinterio_primary_lime text-black hidden lg:flex">Book Consult</a>
         </div>
       </div>
     </nav>
+
+
+    <!-- Banner -->
+    <section class="w-11/12 mx-auto">
+      <div class="sm:w-3/4 mx-auto  flex flex-col justify-between items-center gap-5 sm:gap-6 text-center">
+        <img src="./images/banner.png" alt="">
+        <h2 class="text-5xl sm:text-6xl font-extrabold leading-tight text-black ">A barn house of this design has a <br>
+          striking appearance </h2>
+        <p class="text-para_deep">Your next home is just a key away—unlock comfort and style with us!</p>
+
+        <div>
+          <button
+            class="btn bg-light_lime rounded-3xl border-lime-700 md:text-lg flex justify-center items-center max-h-10 text-black"><span>View
+              Details</span>
+            <i
+              class="text-black bg-lime h-6 w-6 flex justify-center items-center rounded-full fa-solid fa-arrow-right -rotate-45"></i>
+          </button>
+        </div>
+      </div>
+    </section>
   </header>
 
   <main>
+    <!-- Gray Section -->
+    <section class="bg-gray-200  relative">
+      <div class="h-16 w-28 absolute top-5  left-20 hidden sm:block"><img src="./images/Vector.png" alt=""></div>
+
+      <!-- About Us -->
+      <div
+        class="py-10 sm:py-16 w-11/12 mx-auto gap-10 sm:gap-0 flex flex-col sm:flex-row sm:justify-around text-black">
+
+        <!-- About us text  -->
+        <div
+          class="flex flex-col gap-6 sm:w-5/12 w-full sm:pr-10 items-center sm:items-start text-center sm:text-left ">
+
+          <button class="bg-white h-8 gap-2 px-5  rounded-2xl border flex  justify-center items-center">
+            <i class="fa-solid fa-arrow-right"></i> <span class="text-sm font-semibold text-black">About
+              Us</span></button>
+          <h2 class="text-2xl sm:text-4xl font-bold">We design thoughtful, <br>liveable spaces</h2>
+          <p class="text-para_deep text-sm ">Crafting spaces that not only reflect your style but also enhance your
+            daily life—where every detail is thoughtfully designed for living beautifully.</p>
+
+
+          <div class="px-10 py-4  rounded-xl bg-white flex gap-8">
+            <div class="flex flex-col justify-start w-1/4 sm:w-auto sm:justify-center"><img
+                src="./images/commercial.png" alt=""></div>
+            <div class="flex flex-col gap-2 justify-between">
+              <h2 class="text-para_deep text-xl font-bold">commercial</h2>
+              <p class="text-para_light text-sm ">Ready to make your commercial space the talk of the town? Let’s create
+                something extraordinary together.</p>
+            </div>
+          </div>
+
+
+          <div class="px-10 py-4  rounded-xl bg-white flex gap-8">
+            <div class="flex flex-col justify-start w-1/4 sm:w-auto sm:justify-center"><img
+                src="./images/residential.png" alt=""></div>
+            <div class="flex flex-col gap-2 justify-between">
+              <h2 class="text-para_deep text-xl font-bold">Residential</h2>
+              <p class="text-para_light text-sm ">If you think your home could use a touch of magic, let’s make it
+                enchanting together.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- About Us image -->
+        <div class=" sm:w-5/12 flex justify-center items-center ">
+          <img class="h-full" src="./images/Rectangle.png" alt="">
+        </div>
+      </div>
+
+
+      <!-- work process -->
+      <div class="w-11/12 mx-auto py-10 sm:py-16 ">
+
+        <!-- work process text -->
+        <div class="w-full sm:w-1/2  mx-auto flex flex-col text-center items-center gap-3">
+          <div>
+            <button class="bg-white h-8  px-5  rounded-2xl border flex gap-2 justify-center items-center text-black">
+              <i class="fa-solid fa-arrow-right"></i> <span class="text-sm font-semibold text-black">How we
+                works</span></button>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-black">Our Works Process</h2>
+          <p class="text-para_deep text-sm ">From vision to reality—our seamless process brings your dream space to
+            life, step by step.</p>
+        </div>
+
+        <!-- work process card -->
+        <div class="mt-10  grid grid-cols-1 sm:grid-cols-4 gap-4 ">
+          <!-- card1 -->
+          <div class="bg-[#E7C1D3]   p-5 flex flex-col gap-2 rounded-2xl">
+            <div><img src="./images/concept.png" alt=""></div>
+            <h2 class="text-black font-bold">Concept</h2>
+            <p class="text-para_deep text-sm ">Our concepts blend creativity with functionality, turning ordinary spaces
+              into extraordinary experiences.</p>
+          </div>
+          <!-- card2 -->
+          <div class="bg-[#EFDA6E]   p-5 flex flex-col gap-2 rounded-2xl">
+            <div><img src="./images/flow-chart.png" alt=""></div>
+            <h2 class="text-black font-bold">Design Process</h2>
+            <p class="text-para_deep text-sm ">Our designs speak the language of elegance and innovation, creating
+              spaces that inspire and delight.</p>
+          </div>
+          <!-- card3 -->
+          <div class="bg-[#A3DAC4]   p-5 flex flex-col gap-2 rounded-2xl">
+            <div><img src="./images/vision.png" alt=""></div>
+            <h2 class="text-black font-bold">Supervision</h2>
+            <p class="text-para_deep text-sm ">With expert supervision at every stage, we ensure your project is
+              executed to perfection, down to the last detail.</p>
+          </div>
+          <!-- card4 -->
+          <div class="bg-[#77AAEA]  p-5 flex flex-col gap-2 rounded-2xl">
+            <div><img src="./images/budget-planning.png" alt=""></div>
+            <h2 class="text-black font-bold">Budget Planning</h2>
+            <p class="text-para_deep text-sm ">With meticulous budget planning, we guarantee financial resources are
+              optimized to meet your needs.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Latest Portfolio -->
+    <section class="bg-gray-200 sm:bg-white">
+      <div class="w-11/12 mx-auto bg-gray-200 sm:bg-white py-2 sm:py-12  ">
+
+        <!-- Latest portfolio text -->
+        <div class="w-full sm:w-1/2  mx-auto flex flex-col text-center items-center gap-3 pb-4 sm:pb-6">
+          <div>
+            <button
+              class="bg-light_lime h-8  px-5  rounded-2xl border flex gap-2 justify-center items-center text-black">
+              <i class="fa-solid fa-arrow-right"></i> <span class="text-sm font-semibold">Explore Our latest
+                works</span></button>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-black">Our Latest Portfolio</h2>
+          <p class="text-para_deep text-sm ">From sleek urban apartments to cozy suburban retreats, our recent projects
+            have set new standards in rental living.</p>
+        </div>
+
+        <!-- latest portfolio card -->
+
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-3 sm:mx-4 sm:mt-2">
+          <!-- Card1-->
+          <div class="order-1 sm:col-span-8    rounded-2xl p-4 flex flex-col sm:flex-row
+                    gap-4 sm:gap-7 border border-gray-200 sm:border-gray-300 bg-white ">
+            <!-- card image -->
+            <div class="w-full sm:w-2/5  sm:h-full "><img class="w-full h-[250px] sm:h-[150px] object-fill rounded-xl "
+                src="./images/img1.png" alt=""></div>
+            <!-- card text -->
+            <div class="flex flex-col justify-around w-full sm:w-3/5 gap-2">
+              <h2 class="text-lg font-bold text-black">Commercial</h2>
+
+              <p class="text-para_deep text-sm">Explore our newest rental homes, where recent projects highlight our
+                commitment to quality, convenience, and contemporary living.</p>
+
+              <div class="flex gap-2">
+                <h3 class="text-lg font-bold text-black">View details </h3>
+                <i
+                  class="text-black bg-lime h-6 w-6 flex justify-center items-center rounded-full fa-solid fa-arrow-right -rotate-45"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card2-->
+          <div class="order-2 sm:col-span-4 rounded-2xl p-4 border border-gray-200 sm:border-gray-300 bg-white">
+            <img class="w-full h-[250px] sm:h-[150px] object-fill rounded-xl" src="./images/img2.png" alt="">
+          </div>
+
+          <!-- card3 -->
+          <div
+            class="order-3  sm:order-3 sm:col-span-3  rounded-2xl p-4 border border-gray-200 sm:border-gray-300 bg-white">
+            <img class="w-full h-[250px] sm:h-[150px] object-cover rounded-xl" src="./images/img3.png" alt="">
+          </div>
+
+
+          <!-- Card4 -->
+          <div class="sm:order-4 order-4 sm:col-span-6    rounded-2xl p-4 flex flex-col sm:flex-row
+                    gap-4 sm:gap-7 border border-gray-200 sm:border-gray-300 bg-white  ">
+            <!-- card image -->
+            <div class="w-full sm:w-2/5  sm:h-full"><img class="w-full h-[250px] sm:h-[150px] object-fill rounded-xl "
+                src="./images/img4.png" alt=""></div>
+            <!-- card text -->
+            <div class="flex flex-col justify-around w-full sm:w-3/5 gap-2">
+              <h2 class="text-lg font-bold text-black">Commercial</h2>
+
+              <p class="text-para_deep text-sm">Explore our newest rental homes, where recent projects highlight our
+                commitment to quality, convenience, and contemporary living.</p>
+
+              <div class="flex gap-2">
+                <h3 class="text-lg font-bold text-black">View details </h3>
+                <i
+                  class="text-black bg-lime h-6 w-6 flex justify-center items-center rounded-full fa-solid fa-arrow-right -rotate-45"></i>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- card3 -->
+          <div
+            class="order-6   sm:col-span-3  rounded-2xl p-4 border border-gray-200 sm:border-gray-300 bg-white sm:hidden ">
+            <img class="w-full h-[250px] sm:h-[150px] object-cover rounded-xl" src="./images/img3.png" alt="">
+          </div>
+
+
+          <!-- card5 -->
+          <div
+            class="sm:order-5 order-5   sm:col-span-3  rounded-2xl p-4 border border-gray-200 sm:border-gray-300 bg-white">
+            <img class="w-full h-[250px] sm:h-[150px] object-cover rounded-xl" src="./images/img5.png" alt="">
+          </div>
+        </div>
+
+        <!-- User Opinions -->
+        <section class="bg-gray-100 py-12">
+
+          <div class="container mx-auto px-4">
+            <div class="w-full sm:w-3/5  mx-auto flex flex-col text-center items-center gap-3 pb-4 sm:pb-6 ">
+              <div>
+                <button class="bg-light_lime h-8  px-5  rounded-2xl border flex gap-2 justify-center items-center">
+                  <i class="fa-solid fa-arrow-right"></i> <span class="text-sm font-semibold">Our
+                    clients</span></button>
+              </div>
+            </div>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+              <!-- Testimonial1 -->
+              <div class="bg-white p-6 rounded-lg shadow-md ">
+                <div class="flex items-center mb-4">
+                  <img class="w-16 h-16 rounded-full mr-4" src="images/john.png" alt="User 1">
+                  <div>
+                    <h3 class="text-xl font-semibold text-gray-800">John Doe</h3>
+                    <p class="text-gray-500">Happy Renter</p>
+                  </div>
+                </div>
+                <p class="text-gray-600">"Renting with this company was a seamless experience. They were professional,
+                  and the properties were top-notch!"</p>
+              </div>
+
+              <!-- Testimonial2 -->
+              <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                  <img class="w-16 h-16 rounded-full mr-4" src="images/jane.png" alt="User 2">
+                  <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Jane Smith</h3>
+                    <p class="text-gray-500">Satisfied Client</p>
+                  </div>
+                </div>
+                <p class="text-gray-600">"I found my dream house through this company. The process was smooth and
+                  stress-free. Highly recommended!"</p>
+              </div>
+
+              <!-- Testimonial3 -->
+              <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                  <img class="w-16 h-16 rounded-full mr-4" src="images/mike.png" alt="User 3">
+                  <div>
+                    <h3 class="text-xl font-semibold text-gray-800">Mike Johnson</h3>
+                    <p class="text-gray-500">Content Customer</p>
+                  </div>
+                </div>
+                <p class="text-gray-600">"Excellent service and a great selection of properties. The team was very
+                  helpful and accommodating."</p>
+              </div>
+            </div>
+          </div>
+          <!-- Discuss -->
+          <Section class="   bg-cover bg-center w-full " style="background-image: url('./images/bg.jpg');">
+            <div class="w-11/12 mx-auto  py-8 sm:py-16">
+
+
+              <!-- Discuss text -->
+              <div class="w-full sm:w-3/5  mx-auto flex flex-col text-center items-center gap-3 pb-4 sm:pb-6">
+                <div>
+                  <button class="bg-light_lime h-8  px-5  rounded-2xl border flex gap-2 justify-center items-center">
+                    <i class="fa-solid fa-arrow-right"></i> <span class="text-sm font-semibold">Let's
+                      Connect</span></button>
+                </div>
+                <h2 class="text-2xl sm:text-4xl font-extrabold">Let’s Discuss Next Project</h2>
+                <p class="text-para_deep text-sm ">Ready to explore our newest rental offerings? Let’s discuss how these
+                  fresh projects can fit perfectly into your plans.</p>
+              </div>
+
+              <!--Discuss Input  -->
+              <div
+                class="w-full mx-auto sm:w-3/4  grid grid-cols-1 sm:grid-cols-2  grid-rows-8  sm:grid-rows-5  sm:gap-5">
+
+
+                <div>
+                  <input type="text" placeholder="First Name*"
+                    class="input input-bordered input-md w-full border-none rounded-3xl text-sm " />
+                </div>
+                <div>
+                  <input type="text" placeholder="Last Name*"
+                    class="input input-bordered input-md w-full border-none rounded-3xl text-sm" />
+                </div>
+                <div>
+                  <input type="text" placeholder="Phone Number*"
+                    class="input input-bordered input-md w-full border-none rounded-3xl text-sm" />
+                </div>
+                <div>
+                  <input type="text" placeholder="Email*"
+                    class="input input-bordered input-md w-full border-none rounded-3xl text-sm" />
+                </div>
+
+                <div class="row-span-3 sm:col-span-2  ">
+                  <textarea placeholder="Write your message here"
+                    class="textarea  textarea-lg w-full rounded-3xl border-none h-full"></textarea>
+                </div>
+
+                <div class="sm:col-span-2 mt-3 sm:mt-0">
+                  <button
+                    class="btn bg-lime rounded-3xl md:text-xl font-extrabold flex justify-center items-center w-full"><span>Send
+                      Email</span>
+                    <i
+                      class="text-white bg-black h-8 w-8 flex justify-center items-center rounded-full fa-solid fa-arrow-right -rotate-45 text-xl"></i>
+                  </button>>
+                </div>
+              </div>
+
+
+
+            </div>
+          </Section>
+
+          <!-- Footer Section -->
+          <footer class="bg-neutral-900 text-neutral-100 py-10">
+            <div class="container mx-auto text-center">
+
+              <!-- Logo and Description -->
+              <div class="mb-8">
+                <div class="flex justify-center items-center ">
+                  <i
+                    class="text-black text-xl bg-lime h-8 w-8 flex justify-center items-center rounded-full fa-solid fa-arrow-right -rotate-45"></i>
+                  <h1 class="text-3xl font-bold"> Rinterio</h1>
+                </div>
+                <p class="text-neutral-400 mt-4">Looking for a place to call home? Let us show you around—our properties
+                  are ready to make a lasting impression.</p>
+              </div>
+
+              <!-- Navigation Links -->
+              <div class="flex flex-col sm:flex-row justify-center sm:space-x-8 space-y-4 sm:space-y-0 mb-8">
+                <a href="#" class="text-white hover:text-lime-500">Home</a>
+                <a href="#" class="text-white hover:text-lime-500">Services</a>
+                <a href="#" class="text-white hover:text-lime-500">Portfolio</a>
+                <a href="#" class="text-white hover:text-lime-500">Blogs</a>
+                <a href="#" class="text-white hover:text-lime-500">Contact Us</a>
+              </div>
+
+              <!-- Call to Action Button -->
+              <div class="flex justify-center">
+                <button class="btn bg-lime rounded-3xl md:text-lg flex justify-center items-center max-h-10 text-black">
+                  <span>BooK Consult</span>
+                  <i
+                    class="text-white bg-black h-6 w-6 flex justify-center items-center rounded-full fa-solid fa-arrow-right -rotate-45 ml-2"></i>
+                </button>
+              </div>
+
+          </footer>
+
+
+
+
+
+
+
+      </div>
+
+
+    </section>
 
   </main>
-  
-  <footer>
-
-  </footer>
-  
 </body>
+
 </html>
